@@ -92,7 +92,7 @@ class AugmentWAV_H5(object):
             noise_db = 10 * np.log10(np.mean(noise ** 2) + 1e-4)
             noise_list.append(np.sqrt(10 ** ((audio_db - noise_db - noise_snr) / 10)) * noise)
 
-        return np.sum(np.stack(noise_list), axis=0) + audio
+        return np.sum(np.stack(noise_list), axis=0) + audio 
 
     def reverberate(self, audio, audio_sr=16000):
         '''
